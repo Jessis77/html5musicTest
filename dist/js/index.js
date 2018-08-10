@@ -12,6 +12,7 @@ function bindClick(){
         root.processor.renderAllTime(songList[index].duration); //时间长度
         root.render(songList[index]); //换歌曲信息
         root.processor.start();
+        root.list.changeColor(controlmanager);
     })
     $scope.on("click",".prev-btn",function(){
         index = controlmanager.prev();
@@ -31,6 +32,9 @@ function bindClick(){
             audio.play();
             $(this).removeClass("pause");
         }
+    })
+    $scope.on("click",".list-btn",function(){
+        $scope.find(".songlist-wrapper").addClass("show");
     })
 }
 
@@ -75,6 +79,8 @@ function getData(url){
             controlmanager = new root.controlManager(data.length);
             songList = data;
             $scope.trigger("play:onchange",0);
+            root.list.renderList(data);
+            root.list.changeColor(controlmanager);
         },
         error : function(){
             console.log("error!")
