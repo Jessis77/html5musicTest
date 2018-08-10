@@ -16,7 +16,7 @@
             root.blurImg(img,$scope)
         }
         img.src = src;
-        $scope.find(".song-img img").attr("src",src)
+        $scope.find(".song-img img").attr("src","html5musicTest"+src)
     }
     function renderIsLike(isLike){
         if(isLike){
