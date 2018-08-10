@@ -20,7 +20,7 @@
             this.status = "pause";
         },
         setAudioSourse: function(src){
-            this.audio.src = src;
+            this.audio.src = "/html5musicTest"+src;
             this.audio.autoplay = true;
             this.audio.load();
             this.status = "play";
