@@ -4,11 +4,23 @@
         this.audio = new Audio();
         this.status = "play";
         this.bindEvent();
+        $scope.append(this.audio);
     }
     audioManager.prototype = {
         bindEvent: function(){ //监听歌曲是否播放完成
             $(this.audio).on("ended",function(){
                 $scope.find(".next-btn").trigger("click");
+            });
+            $(this.audio).on("timeupdate",function(){
+                for (var i = 0, l = readyLines.length; i < l; i++) {
+                    if (this.currentTime > readyLines[i].time) {
+                        var str = ".moving #No"+readyLines[i].time;
+                        var top = -i*24 +52;
+                        $scope.find(".moving").css("top",top+"px");
+                        $scope.find(".moving .singing").removeClass("singing");
+                        $scope.find(str).addClass("singing");
+                    };
+                };
             })
         },
         play: function(){
@@ -20,7 +32,7 @@
             this.status = "pause";
         },
         setAudioSourse: function(src){
-            this.audio.src = "/html5musicTest"+src;
+            this.audio.src = src;
             this.audio.autoplay = true;
             this.audio.load();
             this.status = "play";
