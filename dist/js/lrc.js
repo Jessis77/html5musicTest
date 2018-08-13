@@ -41,7 +41,6 @@
                 obj.content = ele.replace(reg,"");
                 if(obj.content.length == 1){
                     obj.content="<br />"
-                    console.log("a");
                 }
                 readyLines.push(obj);
             }
