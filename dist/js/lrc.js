@@ -56,12 +56,9 @@
         })
         if(notReadyLines.length != 0){ //重复的歌词插入数组中，排序
             var len = readyLines.length;
-            console.log("only"+notReadyLines);
             notReadyLines.forEach(function(ele,index){
-                console.log("1"+ele.content);
                 for(var i = 0;i < len;i++){
                     if(readyLines[i].time > ele.time){
-                        console.log("2"+ele.conten);
                         readyLines.splice(i,0,ele);
                         len++;
                         break;
