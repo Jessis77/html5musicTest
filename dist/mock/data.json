@@ -6,7 +6,8 @@
         "album": "意外",
         "singer": "薛之谦",
         "duration": 253,
-        "isLike": true
+        "isLike": true,
+		"lrc": "/source/song_1.lrc"
     },
     {
         "image": "/source/song_2.jpg",
@@ -15,7 +16,8 @@
         "album": "小梦大半",
         "singer": "陈粒",
         "duration": 297,
-        "isLike": false
+        "isLike": false,
+		"lrc": "/source/song_2.lrc"
     },
     {
         "image": "/source/song_3.jpg",
@@ -24,6 +26,7 @@
         "album": "÷",
         "singer": "ed sheeran",
         "duration": 235,
-        "isLike": false
+        "isLike": false,
+		"lrc": "/source/song_3.lrc"
     }
 ]
