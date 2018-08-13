@@ -14,11 +14,11 @@
             // };
             // //向服务器发送请求
             // request.send();
-        var url1 = url;
+        var url1 = "../.."+url;
         console.log(url1);
         $.ajax({
             type : "GET",
-            url : url,
+            url : url1,
             dataType: 'text',
             success : function(data){
                 console.log(data);
