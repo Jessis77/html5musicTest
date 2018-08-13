@@ -15,7 +15,6 @@
             // //向服务器发送请求
             // request.send();
         var url1 = "../.."+url;
-        console.log(url1);
         $.ajax({
             type : "GET",
             url : url1,
