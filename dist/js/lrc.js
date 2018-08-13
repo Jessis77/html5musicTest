@@ -20,7 +20,6 @@
             url : url1,
             dataType: 'text',
             success : function(data){
-                console.log(data);
                 clipLrc(data);
                 addToHTML();
             },
