@@ -9,6 +9,7 @@ var readyLines = [];
 
 function bindClick(){
     $scope.on("play:onchange",function(event,index){
+        console.log(songList[index]);
         root.showLrc(songList[index].lrc);
         audio.setAudioSourse(songList[index].audio); //换源
         root.processor.renderAllTime(songList[index].duration); //时间长度
