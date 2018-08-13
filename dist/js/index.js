@@ -10,7 +10,6 @@ var readyLines = [];
 function bindClick(){
     $scope.on("play:onchange",function(event,index){
         root.showLrc(songList[index].lrc);
-        console.log(readyLines);
         audio.setAudioSourse(songList[index].audio); //换源
         root.processor.renderAllTime(songList[index].duration); //时间长度
         root.render(songList[index]); //换歌曲信息
