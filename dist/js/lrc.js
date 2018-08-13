@@ -16,7 +16,7 @@
             // request.send();
         $.ajax({
             type : "GET",
-            url : url,
+            url : "html5musicTest"+url,
             dataType: 'text',
             success : function(data){
                 console.log(data);
