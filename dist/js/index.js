@@ -63,7 +63,6 @@ function bindTouch(){
         var curDuration = songList[index].duration;
         time = curDuration * percent;
         audio.jumpToplay(time);
-        root.processor.start(percent);
         $(".play-btn").removeClass("pause");
     })
 
