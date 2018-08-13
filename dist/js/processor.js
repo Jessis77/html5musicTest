@@ -20,9 +20,6 @@
     function reset(){
         lastPercent = 0;//换源清空上次记录
         update(0);//滚动条
-        if(frameId){
-            cancelAnimationFrame(frameId);
-        }
     }
     function renderAllTime(duration){ //总时间
         reset();
