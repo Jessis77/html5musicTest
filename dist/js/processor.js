@@ -43,7 +43,6 @@
     function stop(){
         var stopTime = new Date().getTime();
         lastPercent = lastPercent + (stopTime - startTime)/(curDuration*1000);
-        cancelAnimationFrame(frameId);
     }
 
     root.processor={
