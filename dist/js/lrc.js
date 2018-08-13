@@ -56,7 +56,7 @@
     function addToHTML(){
         var str = '';
         readyLines.forEach(function(ele,index){
-            str += `<div id="No${ele.time}">${ele.content}</div>`
+            str += `<div class="No${ele.time}">${ele.content}</div>`
         })
         $scope.find(".lrc-wrapper .moving").html(str);
     }
