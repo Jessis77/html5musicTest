@@ -19,6 +19,7 @@
             url : url,
             dataType: 'text',
             success : function(data){
+                console.log(data);
                 clipLrc(data);
                 addToHTML();
             },
