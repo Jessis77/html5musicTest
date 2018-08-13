@@ -36,8 +36,8 @@
             transform : "translateX("+ percentage +")"
         });
     }
-    function start(curTime,percentage){     //计算百分比
-        var percent = curTime/curDuration + percentage;
+    function start(curTime){     //计算百分比
+        var percent = curTime/curDuration;
         update(percent);
     }
     function stop(){
