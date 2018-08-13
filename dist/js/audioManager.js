@@ -21,6 +21,7 @@
                         $scope.find(str).addClass("singing");
                     };
                 };
+                root.processor.start(this.currentTime,0);
             })
         },
         play: function(){
