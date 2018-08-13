@@ -31,20 +31,44 @@
 
     function clipLrc(lrc){
         readyLines = [];
+        var notReadyLines = [];
         var lines = lrc.split("\n");
-        var reg = /\[\d{2}\:\d{2}\.\d{2}\]/g;
+        var reg = /\[\d{2}\:\d{2}\.\d{2,3}\]/g;
         var len = lines.length;
         lines.forEach(function(ele,index){
             if(ele.match(reg)){
-                var obj = new Object();
-                obj.time = format(ele.match(reg));
-                obj.content = ele.replace(reg,"");
-                if(obj.content.length == 0 || obj.content.length == 1){
-                    obj.content="<br />"
-                }
-                readyLines.push(obj);
+                var timeArr = ele.match(reg);
+                var content = ele.replace(reg,"");
+                timeArr.forEach(function(ele,index){
+                    var obj = new Object();
+                    obj.time = format(ele.match(reg));
+                    obj.content = content;
+                    if(obj.content.length == 1 || obj.content.length == 0){
+                        obj.content="<br />"
+                    }
+                    if(index == 0){
+                        readyLines.push(obj);
+                    }else{
+                        notReadyLines.push(obj);
+                    }
+                });
             }
         })
+        if(notReadyLines.length != 0){ //重复的歌词插入数组中，排序
+            var len = readyLines.length;
+            console.log("only"+notReadyLines);
+            notReadyLines.forEach(function(ele,index){
+                console.log("1"+ele.content);
+                for(var i = 0;i < len;i++){
+                    if(readyLines[i].time > ele.time){
+                        console.log("2"+ele.conten);
+                        readyLines.splice(i,0,ele);
+                        len++;
+                        break;
+                    }
+                }
+            })
+        }
     }
     function format(time){
         time = JSON.stringify(time);
