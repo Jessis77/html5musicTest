@@ -13,7 +13,6 @@ function bindClick(){
         audio.setAudioSourse(songList[index].audio); //换源
         root.processor.renderAllTime(songList[index].duration); //时间长度
         root.render(songList[index]); //换歌曲信息
-        root.processor.start();
         root.list.changeColor(controlmanager);
     })
     $scope.on("click",".prev-btn",function(){
@@ -30,7 +29,6 @@ function bindClick(){
             audio.pause();
             $(this).addClass("pause");
         }else{
-            root.processor.start();
             audio.play();
             $(this).removeClass("pause");
         }
