@@ -39,7 +39,7 @@
                 var obj = new Object();
                 obj.time = format(ele.match(reg));
                 obj.content = ele.replace(reg,"");
-                if(obj.content.length == 1){
+                if(obj.content.length == 0 || obj.content.length == 1){
                     obj.content="<br />"
                 }
                 readyLines.push(obj);
