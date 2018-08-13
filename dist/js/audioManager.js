@@ -14,7 +14,7 @@
             $(this.audio).on("timeupdate",function(){
                 for (var i = 0, l = readyLines.length; i < l; i++) {
                     if (this.currentTime > readyLines[i].time) {
-                        var str = ".moving #No"+readyLines[i].time;
+                        var str = ".moving .No"+readyLines[i].time;
                         var top = -i*24 +52;
                         $scope.find(".moving").css("top",top+"px");
                         $scope.find(".moving .singing").removeClass("singing");
