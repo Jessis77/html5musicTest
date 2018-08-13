@@ -14,6 +14,7 @@
             // };
             // //向服务器发送请求
             // request.send();
+        $scope.find(".moving").css("top","52px");
         var url1 = "../.."+url;
         $.ajax({
             type : "GET",
