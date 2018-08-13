@@ -35,7 +35,6 @@
         $scope.find(".pro-top").css({
             transform : "translateX("+ percentage +")"
         });
-        console.log(percent);
     }
     function start(curTime,percentage){     //计算百分比
         var percent = curTime/curDuration + percentage;
