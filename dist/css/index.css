@@ -111,6 +111,8 @@ body {
 .wrapper .lrc-wrapper {
   height: 20vh;
   padding-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
   overflow: hidden;
   position: relative;
 }
@@ -119,6 +121,7 @@ body {
   top: 52px;
   width: 100%;
   transition: top 200ms ease-out;
+  white-space: nowrap;
 }
 .wrapper .lrc-wrapper .moving div {
   color: #fff;
@@ -132,6 +135,7 @@ body {
   line-height: 22px;
   color: #128f12;
   font-weight: bold;
+  white-space: normal;
 }
 .wrapper .control {
   width: 100%;
