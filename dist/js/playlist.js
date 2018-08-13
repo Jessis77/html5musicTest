@@ -13,7 +13,6 @@
         bindEvent();
     }
     function changeColor(controlManager){
-        console.log(controlManager);
         $playList.find(".playing").removeClass("playing");
         $playList.find("li").eq(controlManager.index).addClass("playing");
     }
