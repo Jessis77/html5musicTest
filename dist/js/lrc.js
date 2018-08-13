@@ -1,7 +1,6 @@
 (function ($,root){
     var $scope = $(document.body);    
     function getLrc(url){
-        console.log(url);
             // //建立一个XMLHttpRequest请求
             // var request = new XMLHttpRequest();
             // //配置, url为歌词地址，比如：'./content/songs/foo.lrc'
@@ -17,7 +16,7 @@
             // request.send();
         $.ajax({
             type : "GET",
-            url : "html5musicTest"+url,
+            url : url,
             dataType: 'text',
             success : function(data){
                 console.log(data);
@@ -25,7 +24,7 @@
                 addToHTML();
             },
             error : function(){
-                console.log("error!"+url)
+                console.log("error!")
             }
         })
     }
