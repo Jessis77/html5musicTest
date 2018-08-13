@@ -39,20 +39,9 @@
             transform : "translateX("+ percentage +")"
         });
     }
-    function start(percentage){     //计算百分比
-        lastPercent = percentage === undefined ? lastPercent:percentage;
-        startTime = new Date().getTime();
-        function frame(){  //这里用requestAnimationFrame动画16ms自动刷新一次
-            var curTime = new Date().getTime();
-            var percent = (curTime - startTime)/(curDuration*1000) + lastPercent;
-            update(percent);
-            if(percent < 1){
-                frameId = requestAnimationFrame(frame);
-            }else{
-                cancelAnimationFrame(frameId);
-            }
-        }
-        frame();
+    function start(curTime,percentage){     //计算百分比
+        var percent = curTime/curDuration + percentage;
+        update(percent);
     }
     function stop(){
         var stopTime = new Date().getTime();
