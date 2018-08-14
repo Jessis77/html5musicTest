@@ -11,6 +11,11 @@
 
     // 渲染图片
     function renderImage(src){
+        var img = new Image();
+        img.onload = function(){
+            root.blurImg(img,$scope);
+        }
+        img.src = "/html5musicTest"+src;
         $scope.find(".song-img img").attr("src","/html5musicTest"+src)
     }
     function renderIsLike(isLike){
